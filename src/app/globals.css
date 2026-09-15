@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+	/* Paper/ink palette — deliberately cooler and greyer than the common
+     "warm cream" AI default, with a deep teal-green accent instead of the
+     common terracotta one. */
+	--color-background: #f7f6f1;
+	--color-foreground: #1b1b16;
+	--color-muted: #ece9e2;
+	--color-muted-foreground: #6b6a61;
+	--color-accent: #2b6e63;
+	--color-accent-foreground: #f7f6f1;
+	--color-border: #dedbd1;
+	--color-card: #fdfcfa;
+	--color-card-foreground: #1b1b16;
+
+	--font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: var(--font-serif), ui-serif, Georgia, serif;
+	--font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+	* {
+		border-color: var(--color-border);
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-foreground);
+	}
+
+	a {
+		color: var(--color-accent);
+		text-underline-offset: 3px;
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+	}
+}
+
+@layer components {
+	/* Reading-column typography for markdown post bodies. */
+	.prose-post {
+		max-width: 68ch;
+	}
+
+	.prose-post :where(h2, h3) {
+		font-family: var(--font-serif);
+		font-weight: 600;
+	}
+
+	.prose-post code {
+		font-family: var(--font-mono);
+		font-size: 0.9em;
+	}
+}
