@@ -32,7 +32,6 @@ export async function generateMetadata({
 			description: post.excerpt ?? undefined,
 			type: "article",
 			publishedTime: post.publishedAt?.toISOString(),
-			images: post.coverImage ? [post.coverImage] : undefined,
 		},
 	};
 }
