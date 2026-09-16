@@ -29,6 +29,9 @@ export const metadata: Metadata = {
 		default: siteName,
 		template: `%s · ${siteName}`,
 	},
+	icons: {
+		icon: "/marginalia.svg",
+	},
 	description: siteDescription,
 	openGraph: {
 		type: "website",
